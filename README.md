@@ -1,7 +1,7 @@
 # CannaRec
 ## Description
 This repository contains the Python code for an application that allows users to find new strains of cannabis. The functional website can be found 
-at [www.cannarec.herokuapp.com](www.cannarec.herokuapp.com).
+at [www.cannarec.herokuapp.com](https://cannarec.herokuapp.com).
 
 The application was designed using Dash and Pandas.
 
