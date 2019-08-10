@@ -27,5 +27,5 @@ python app.py
 ```
 > __**Note:**__ None of the app's tools will work because I have excluded those data files from the repo
 
-## Questions/Contributions/Future Work
+## Questions or Contributions
 I'm very open to any recommendations or contributions! Please reach out to me on Github if you would like to contribute or chat.
