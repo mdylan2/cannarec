@@ -104,4 +104,8 @@ venv.bak/
 .mypy_cache/
 
 # Jsons
-*.json
+all_data.json
+everything.json
+flavor_sim.json
+general_sim.json
+medical_sim.json
