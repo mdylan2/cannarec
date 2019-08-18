@@ -35,6 +35,17 @@ python app.py
 ```
 > __**Note:**__ None of the app's tools will work because I have excluded those data files from the repo
 
+## Application Interface
+### `Home Page`
+![home page](images/1.png)
+
+### `Select By Strain`
+![select by strain](images/2.gif)
+
+### `Select By Preference`
+![select by preference](images/3.gif)
+
+
 ## Questions or Contributions
 I'm very open to any recommendations or contributions! Please reach out to me on Github if you would like to contribute or chat.
 I can provide you with the data files on request and with the tools I used to collect, clean, and compile the data for the website.
