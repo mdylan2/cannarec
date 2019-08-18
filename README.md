@@ -37,7 +37,7 @@ python app.py
 
 ## Application Interface
 ### `Home Page`
-![home page](images/1.png)
+![home page](images/1.PNG)
 
 ### `Select By Strain`
 ![select by strain](images/2.gif)
