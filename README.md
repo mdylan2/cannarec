@@ -9,7 +9,7 @@ I presented this app as my final project for a coding bootcamp I attended. The s
 ## Packages Used
 - Plotly Dash
 - Pandas
-- Keras
+- NumPy
 
 ## Files
 Here's a list of important files/folders in the directory:
