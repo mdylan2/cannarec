@@ -1,8 +1,10 @@
 # CannaRec
 ## Description
-This repository contains the Python code for a cannabis recommendation application that allows users to find new strains of cannabis based on current strains they like or flavor/physiological preferences. 
+This repository contains the Python code for a cannabis recommendation application that allows users to find new strains of cannabis based on current strains they like or flavor/physiological preferences.
 
 The fully functional website can be found at [www.cannarec.herokuapp.com](https://cannarec.herokuapp.com).
+
+I presented this app as my final project for a coding bootcamp I attended. The slide deck for my presentation has been included in the repository.
 
 ## Packages Used
 - Plotly Dash
@@ -14,6 +16,7 @@ Here's a list of important files/folders in the directory:
 - `app.py`: Contains the code to launch the application
 - `view.py`: Contains the HTML layouts used in the Dash application
 - `assets`: Contains the CSS, Javascript and other images used in the website
+- `Presentation (CannaRec)`: Contains a presentation I prepared 
 
 ## Usage
 In order to use the application, do the following:
