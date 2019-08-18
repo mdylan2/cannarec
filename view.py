@@ -23,7 +23,7 @@ def navbar():
                         [
                             dbc.NavItem(html.A("Home", href = '#home', className = "nav-link")),
                             dbc.NavItem(html.A("Search By Strain", href = '#by-strain', className = "nav-link")),
-                            dbc.NavItem(html.A("Search By Flavors & Feelings", href = '#by-flavfeel', className = "nav-link")),  
+                            dbc.NavItem(html.A("Search By Preference", href = '#by-flavfeel', className = "nav-link")),  
                             dbc.NavItem(html.A("Contact", href = 'https://www.linkedin.com/in/dylan-mendonca-65165898/', className = "nav-link"))
                         ], className = "nav navbar-nav ml-auto"
                     )
@@ -36,34 +36,28 @@ def navbar():
 def jumbotron():
     jumbotron = html.Div(
         [
-            dbc.Row(
+            html.Div(),
+            dbc.Jumbotron(
                 [
-                    dbc.Col(
+                    html.H1("CannaRec", className="display-3"),
+                    html.P(
+                        ["Picking a new strain can be hard.",
+                        html.Br(),
+                        "We're here to help."],
+                        className="lead",
+                    ),
+                    html.Hr(className="my-2"),
+                    html.P(
+                        "Click one of the options below to get started."
+                    ),
+                    html.Div(
                         [
-                            dbc.Jumbotron(
-                                [
-                                    html.H1("CannaRec", className="display-3"),
-                                    html.P(
-                                        ["Picking a new strain can be hard.",
-                                        html.Br(),
-                                        "We're here to help."],
-                                        className="lead",
-                                    ),
-                                    html.Hr(className="my-2"),
-                                    html.P(
-                                        "Click one of the options below to get started."
-                                    ),
-                                    html.P(
-                                        [
-                                            dbc.Button(html.A("Search By Strain", href = "#by-strain", className = "white_link"), color="primary",),
-                                            dbc.Button(html.A("Search By Flavors & Feelings", href = "#by-flavfeel", className = "white_link"), color="primary",style = {'margin-left':'15px'})
-                                        ], className="lead"),
-                                ], className = "landingj container"
-                            )
-                        ], width = {'size': 3, 'offset':2}, className = "margin-up"
-                    )
-                ]
-            )
+                            dbc.Button(html.A("Search By Strain", href = "#by-strain", className = "white_link"), color="primary",),
+                            dbc.Button(html.A("Search By Preference", href = "#by-flavfeel", className = "white_link"), color="primary",style = {'margin-left':'15px'})
+                        ], className = "jumbo-buttons"),
+                ], 
+            ),
+            html.Div()
         ], className = "landing", id = "home"
     )
     return jumbotron
@@ -72,65 +66,57 @@ def jumbotron():
 def by_strain(strain_dropdown):
     body = html.Div(
         [
-            dbc.Row(
+            html.Div(),
+            dbc.Jumbotron(
                 [
-                    dbc.Col(
+                    html.Div(
                         [
-                            dbc.Jumbotron(
-                                [
-                                    html.Div(
-                                        [
-                                            html.H4("Search By Strain"),
-                                            html.Br(),
-                                            html.H6("What strain do you like?"),
-                                            dcc.Dropdown(
-                                                id = "strain_name",
-                                                options = strain_dropdown.to_dict(orient='records'),
-                                                value = None,
-                                                placeholder = "Select a Strain"
-                                            ),
-                                            html.Br(),
-                                            html.H6("Why do you like this strain?"),
-                                            dcc.Dropdown(
-                                                id = "why_strain",
-                                                options = [
-                                                    {'label':"Feels Great", "value":"general"},
-                                                    {'label':"Tastes Amazing", "value":"flavors"},
-                                                    {'label':"Treats a Medical Condition", "value":"medical"},
-                                                    ],
-                                                value = None,
-                                                placeholder = "Select the Reason"
-                                            ),
-                                            html.Br(),
-                                            dbc.Button("CannaRec Me!", id = "letsgo", color = "primary")
-                                        ], className = "question-section"
-                                    ),
-                                    
-                                ], className = "logon container", 
-                            )
-                        ], width = {'size':4, 'offset':1}, className = "margin-up"
+                            html.H4("Search By Strain"),
+                            html.H6("What strain do you like?"),
+                            dcc.Dropdown(
+                                id = "strain_name",
+                                options = strain_dropdown.to_dict(orient='records'),
+                                value = None,
+                                placeholder = "Select a Strain"
+                            ),
+                            html.Br(),
+                            html.H6("Why do you like this strain?"),
+                            dcc.Dropdown(
+                                id = "why_strain",
+                                options = [
+                                    {'label':"Feels Great", "value":"general"},
+                                    {'label':"Tastes Amazing", "value":"flavors"},
+                                    {'label':"Treats a Medical Condition", "value":"medical"},
+                                    ],
+                                value = None,
+                                placeholder = "Select the Reason"
+                            ),
+                            html.Br(),
+                            dbc.Button("CannaRec Me!", id = "letsgo", color = "primary")
+                        ], className = "question-section"
                     ),
-
-                    dbc.Col(
+                    
+                ],  
+            ),
+            html.Div(),
+            html.Div(
+                [
+                    dcc.Loading(
                         [
-                            dcc.Loading(
+                            html.Div(
                                 [
-                                    html.Div(
-                                        [
 
-                                        ], id = "results", className = "results"
-                                    )
-                                ]
+                                ], id = "results", className = "results"
                             )
-
-                        ], width = {'size': 6}, className = "margin-up"
+                        ]
                     )
-                ], 
-            )     
+                ]
+            ),
 
+            html.Div()
 
         ], id = "by-strain"
-    )
+    )     
 
     return body
 
@@ -138,66 +124,59 @@ def by_strain(strain_dropdown):
 def by_flavfeels(general_dropdown, flavor_dropdown, medical_dropdown):
     body2 = html.Div(
         [
-            dbc.Row(
+            html.Div(),
+            dbc.Jumbotron(
+                    [
+                        html.Div(
+                            [
+                                html.H4("Search By Preference"),
+                                html.H6("What feelings do you like?"),
+                                dcc.Dropdown(
+                                    id = "feelings_drop",
+                                    options = general_dropdown.to_dict(orient='records'),
+                                    value = None,
+                                    placeholder = "Select Feelings",
+                                    multi = True
+                                ),
+                                html.Br(),
+                                html.H6("What flavors do you like?"),
+                                dcc.Dropdown(
+                                    id = "flavors_drop",
+                                    options = flavor_dropdown.to_dict(orient='records'),
+                                    value = None,
+                                    placeholder = "Select Flavors",
+                                    multi = True
+                                ),
+                                html.Br(),
+                                html.H6("What medical conditions do you want to treat?"),
+                                dcc.Dropdown(
+                                    id = "medical_drop",
+                                    options = medical_dropdown.to_dict(orient='records'),
+                                    value = None,
+                                    placeholder = "Select Medical Condition to Treat",
+                                    multi = True
+                                ),
+                                html.Br(),
+                                dbc.Button("CannaRec Me!", id = "letsgo2", color = "primary")
+                            ], className = "question-section"
+                        )
+                    ],
+            ),
+            html.Div(),
+            html.Div(
                 [
-                    dbc.Col(
+                    dcc.Loading(
                         [
-                            dbc.Jumbotron(
-                                    [
-                                        html.Div(
-                                            [
-                                                html.H4("Search By Flavors & Feelings"),
-                                                html.Br(),
-                                                html.H6("What feelings do you like?"),
-                                                dcc.Dropdown(
-                                                    id = "feelings_drop",
-                                                    options = general_dropdown.to_dict(orient='records'),
-                                                    value = None,
-                                                    placeholder = "Select Feelings",
-                                                    multi = True
-                                                ),
-                                                html.Br(),
-                                                html.H6("What flavors do you like?"),
-                                                dcc.Dropdown(
-                                                    id = "flavors_drop",
-                                                    options = flavor_dropdown.to_dict(orient='records'),
-                                                    value = None,
-                                                    placeholder = "Select Flavors",
-                                                    multi = True
-                                                ),
-                                                html.Br(),
-                                                html.H6("What medical conditions do you want to treat?"),
-                                                dcc.Dropdown(
-                                                    id = "medical_drop",
-                                                    options = medical_dropdown.to_dict(orient='records'),
-                                                    value = None,
-                                                    placeholder = "Select Medical Condition to Treat",
-                                                    multi = True
-                                                ),
-                                                html.Br(),
-                                                dbc.Button("CannaRec Me!", id = "letsgo2", color = "primary")
-                                            ], className = "question-section"
-                                        )
-                                    ], className = "logon container margin-up"
-                            )
-                        ], width = {'size':4, 'offset':1 }
-                    ),
-
-                    dbc.Col(
-                        [
-                            dcc.Loading(
+                            html.Div(
                                 [
-                                    html.Div(
-                                        [
 
-                                        ], id = "results2", className = "results"
-                                    )
-                                ]
+                                ], id = "results2", className = "results"
                             )
-                        ], width = {'size': 6}, className = "margin-up"
+                        ]
                     )
-                ], 
-            )     
+                ]
+            ),
+            html.Div()
         ], id = "by-flavfeel"
     )
     return body2

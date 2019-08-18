@@ -14,18 +14,29 @@ html {
     background-image: url("/assets/images/background.jpg");
     height: 100vh;
     background-size: cover;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr auto 3fr;
 }
 
 #by-strain {
     min-height: 100vh;
     background-image: url("/assets/images/body.jpg");
     background-size: cover;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 0.1fr 1.6fr 0.1fr 3fr 0.1fr;
+    padding-top:30px;
 }
 
 #by-flavfeel {
     min-height: 100vh;
     background-image: url("/assets/images/body2.jpg");
     background-size: cover;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 0.1fr 1.6fr 0.1fr 3fr 0.1fr;
+    padding-top:40px;
 }
 
 
@@ -70,10 +81,16 @@ html {
     opacity: 0.85;
     margin-bottom: 0px;
     padding: 64px 42px;
+    height: max-content;
 }
 
 .jumbotron.logon h6 {
   font-weight: 600;
+}
+
+.jumbo-buttons {
+    display: grid;
+    grid-template-columns: 42% 58%;
 }
 
 
@@ -139,7 +156,7 @@ html {
 .strain-name {
     justify-self: left;
     align-self: end;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     grid-area: name;
 }
@@ -207,6 +224,7 @@ html {
 /* Results Box */
 .results {
     background: rgb(236,240,241,0.7);
+    border-radius: 0.3rem;
 }
 
 /* Question Sections */
