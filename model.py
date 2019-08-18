@@ -8,7 +8,8 @@ def similar_strain(strain, main_dataset, by):
     final = pd.concat([most_similar_names,most_similar_info], axis = 1)
     return final.rename_axis('strains').reset_index()
 
-# 
+# This function takes in a user query of feelings, flavors, medical conditions and returns a dataframe of 
+# strains (with their information) and a percentage similarity
 def find_me_strains(general_liked = [], medical_liked = [], flavors_liked = [], everything = []):
     total_score = len(general_liked) + len(medical_liked) + len(flavors_liked)
     dataset = pd.DataFrame(everything[flavors_liked + general_liked + medical_liked].sum(axis = 1).sort_values(ascending=False)/total_score)
