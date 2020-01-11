@@ -2,7 +2,7 @@
 ## Description
 This repository contains the Python code for a cannabis recommendation application that allows users to find new strains of cannabis based on current strains they like or flavor/physiological preferences.
 
-The fully functional website can be found at [www.cannarec.herokuapp.com](https://cannarec.herokuapp.com).
+The fully functional website can be found at [www.cannarec.herokuapp.com](https://cannarec.herokuapp.com). I'm not much of a UI/UX person, please ignore any issues with the layout.
 
 I presented this app as my final project for a coding bootcamp I attended. The slide deck for my presentation has been included in the repository.
 
@@ -47,5 +47,5 @@ python app.py
 
 
 ## Questions or Contributions
-I'm very open to any recommendations or contributions! Please reach out to me on Github if you would like to contribute or chat.
+I'm very open to any recommendations or contributions (especially with UI/UX)! Please reach out to me on Github if you would like to contribute or chat.
 I can provide you with the data files on request and with the tools I used to collect, clean, and compile the data for the website.
